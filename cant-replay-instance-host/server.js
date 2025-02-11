@@ -17,6 +17,12 @@ fastify.post("/", async function handler(request, reply) {
 		.send("");
 });
 
+fastify.post("/app", async function handler(request, reply) {
+	const { instanceId } = request.body;
+	console.log(instanceId);
+	reply.code(204).header("fly-replay", "app=cant-replay-instance-child").send("");
+});
+
 // Run the server!
 try {
 	await fastify.listen({ port: 3000 });

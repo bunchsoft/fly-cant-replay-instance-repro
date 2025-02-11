@@ -12,6 +12,10 @@ fastify.post("/", async function handler() {
 	return "hello from child";
 });
 
+fastify.post("/app", async function handler() {
+	return "hello from child";
+});
+
 // Run the server!
 try {
 	await fastify.listen({ port: 3000 });
